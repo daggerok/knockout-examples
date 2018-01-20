@@ -3,6 +3,8 @@
 This repository is contains some ko (Knockout.js) examples.
 
 . link:starter/[starter]
+. link:observable/[observable]
+. link:computed/[computed]
 
 .build and run
 ----

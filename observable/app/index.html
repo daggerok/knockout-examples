@@ -6,10 +6,12 @@
         content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Knockout.js</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <!--<link rel="stylesheet" href="../node_modules/material-design-icons/iconfont/material-icons.css">-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
-
 <body class="grid-container">
 
 <nav>
@@ -33,17 +35,19 @@
 
 <div class="grid-content container" id="app">
   <p data-bind="text:message"></p>
+  <button data-bind="click:updateMessage"
+          class="btn waves-effect">update</button>
 </div>
 
 <footer class="grid-footer page-footer blue-grey lighten-1">
   <span class="footer-copyright">
     <div class="container">
-      2018 <a class="grey-text text-lighten-3" href="http://materializecss.com">daggerok</a>
+      2018 <a class="grey-text text-lighten-3"
+              href="http://materializecss.com">daggerok</a>
     </div>
   </span>
 </footer>
 
 <script src="./main.js"></script>
-
 </body>
 </html>

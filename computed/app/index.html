@@ -6,44 +6,48 @@
         content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Knockout.js</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../node_modules/materialize-css/dist/css/materialize.css" type="text/css">
+  <link rel="shortcut icon" href="style.css" type="text/css">
 </head>
-
 <body class="grid-container">
 
 <nav>
   <div class="grid-header nav-wrapper blue-grey lighten-1">
-    <a href="#" class="brand-logo">&nbsp; Knockout.js</a>
-    <a href="#" data-activates="mobile-menu" class="button-collapse">
+    <a href="#/" class="brand-logo">&nbsp; Knockout.js</a>
+    <a href="#/" data-activates="mobile-menu" class="button-collapse">
       <i class="material-icons">menu</i>
     </a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="#">Home</a></li>
-      <li><a href="#link1">Link 1</a></li>
-      <li><a href="#link2">Link 2</a></li>
+      <li><a href="#/">Home</a></li>
+      <li><a href="#/link1">Link 1</a></li>
+      <li><a href="#/link2">Link 2</a></li>
     </ul>
     <ul class="side-nav" id="mobile-menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="#link1">Login</a></li>
-      <li><a href="#link2">Logout</a></li>
+      <li><a href="#/">Home</a></li>
+      <li><a href="#/link1">Link 1</a></li>
+      <li><a href="#/link2">Link 2</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="grid-content container" id="app">
   <p data-bind="text:message"></p>
+  <p data-bind="text:suffixed"></p>
+  <button class="btn waves-effect"
+          data-bind="click:inUpperCase">up!</button>
 </div>
 
 <footer class="grid-footer page-footer blue-grey lighten-1">
   <span class="footer-copyright">
     <div class="container">
-      2018 <a class="grey-text text-lighten-3" href="http://materializecss.com">daggerok</a>
+      2018 <a class="grey-text text-lighten-3"
+              href="https://github.com//daggerok">daggerok</a>
     </div>
   </span>
 </footer>
 
 <script src="./main.js"></script>
-
 </body>
 </html>

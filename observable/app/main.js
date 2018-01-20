@@ -1,7 +1,6 @@
-// yarn add -E material-design-icons
 // import 'material-design-icons/iconfont/material-icons.css';
-import 'materialize-css/dist/css/materialize.css';
-import './style.css';
+// import 'materialize-css/dist/css/materialize.css';
+// import './style.css';
 
 import 'hammerjs/hammer.js';
 import 'jquery/dist/jquery.js';
@@ -11,7 +10,11 @@ import ko from 'knockout/build/output/knockout-latest.js';
 $(".button-collapse").sideNav();
 
 const viewModel = {
-  message: 'Hello, Maksimko!',
+  message: ko.observable('Hello!'),
+  updateMessage: function updateMessage() {
+    const message = this.message();
+    this.message(message.toUpperCase());
+  }
 };
 
 ko.applyBindings(viewModel);

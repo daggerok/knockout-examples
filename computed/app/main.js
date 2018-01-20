@@ -11,7 +11,20 @@ import ko from 'knockout/build/output/knockout-latest.js';
 $(".button-collapse").sideNav();
 
 const viewModel = {
-  message: 'Hello, Maksimko!',
+
+  message: ko.observable('Hello, Maksimko!'),
+
+  suffix: 'really..',
+
+  inUpperCase: function inUpperCase() {
+    const newValue = this.message().toUpperCase();
+    this.message(newValue);
+  },
+
+  getSuffixed: function getSuffixed() {
+    return `${this.message()} ${this.suffix}`;
+  }
 };
 
+viewModel.suffixed = ko.computed(viewModel.getSuffixed, viewModel);
 ko.applyBindings(viewModel);

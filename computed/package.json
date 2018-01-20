@@ -5,6 +5,7 @@
   "license": "MIT",
   "devDependencies": {
     "babel-preset-env": "1.6.1",
+    "babel-preset-stage-0": "6.24.1",
     "gh-pages": "1.1.0",
     "ncp": "2.0.0",
     "npm-run-all": "4.1.2",
@@ -18,15 +19,10 @@
     "knockout": "3.4",
     "materialize-css": "0.100.2"
   },
-  "babel": {
-    "presets": [
-      "env"
-    ]
-  },
   "scripts": {
     "clean": "rimraf -rf dist",
-    "start": "parcel ./app/index.html -p 3000",
-    "build": "parcel build ./app/index.html --out-dir ./dist --public-url='/'",
+    "start": "parcel -p 3000 ./app/index.html",
+    "build": "parcel build ./app/index.html --no-cache --out-dir='./dist' --public-url='/'",
     "serve": "serve -CSsp 3000 dist",
     "prebuild": "yarn -i || npm i --no-optional",
     "preghpages": "npm-run-all preghpages:*",
@@ -36,5 +32,11 @@
     "preghpages:nojekyll": "touch ./dist/.nojekyll",
     "ghpages": "gh-pages -d ./dist -b gh-pages -m \"Parcel Github Pages $(date +%Y-%m-%d) deployment\""
   },
-  "homepage": "https://daggerok.github.io/knockout-examples"
+  "homepage": "https://daggerok.github.io/knockout-examples",
+  "babel": {
+    "presets": [
+      "env",
+      "stage-0"
+    ]
+  }
 }
