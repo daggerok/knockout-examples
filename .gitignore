@@ -1,0 +1,10 @@
+starter/.cache
+.idea
+*.iml
+*.ipr
+*.iws
+*.log*
+node_modules
+dist
+package-lock.json
+yarm.lock

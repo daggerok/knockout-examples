@@ -1,0 +1,41 @@
+{
+  "name": "knockout-examples",
+  "version": "0.0.1",
+  "main": "index.html",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-env": "1.6.1",
+    "gh-pages": "1.1.0",
+    "ncp": "2.0.0",
+    "npm-run-all": "4.1.2",
+    "parcel-bundler": "1.4.1",
+    "rimraf": "2.6.2",
+    "serve": "6.4.8"
+  },
+  "dependencies": {
+    "hammerjs": "2.0.8",
+    "jquery": "3.3.0",
+    "knockout": "3.4",
+    "materialize-css": "0.100.2",
+    "material-design-icons": "3.0.1"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "scripts": {
+    "clean": "rimraf -rf dist",
+    "start": "parcel ./app/index.html -p 3000",
+    "build": "parcel build ./app/index.html --out-dir ./dist --public-url='/'",
+    "serve": "serve -CSsp 3000 dist",
+    "prebuild": "yarn -i || npm i --no-optional",
+    "preghpages": "npm-run-all preghpages:*",
+    "preghpages:clean": "rimraf -rf ./dist",
+    "preghpages:build": "parcel build ./app/index.html --no-cache --public-url='/knockout-examples/'",
+    "preghpages:fallback": "ncp ./dist/index.html ./dist/404.html",
+    "preghpages:nojekyll": "touch ./dist/.nojekyll",
+    "ghpages": "gh-pages -d ./dist -b gh-pages -m \"Parcel Github Pages $(date +%Y-%m-%d) deployment\""
+  },
+  "homepage": "https://daggerok.github.io/knockout-examples"
+}

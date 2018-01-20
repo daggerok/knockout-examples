@@ -1,0 +1,42 @@
+sudo: required
+group: travis_lts
+
+env:
+  global:
+    TERM=dumb
+
+language: node_js
+node_js:
+#- 6
+- 7
+- 8
+- 9
+- lts/*
+
+install: true
+before_install:
+- export CHROME_BIN=/usr/bin/google-chrome
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sudo apt update -y || true
+- sudo apt install -y libappindicator1 fonts-liberation || true
+- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+- sudo dpkg -i google-chrome*.deb || true
+
+before_script:
+- npm i -g yarn
+
+script:
+- export root=$(pwd)
+
+# starter
+- cd ${root}/starter
+- yarn -i
+- yarn build
+- yarn preghpages
+
+cache:
+  directories:
+  - $HOME/.npm
+  - $HOME/.nvm
+  - node_modules
