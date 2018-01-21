@@ -1,0 +1,1 @@
+.grid-container{width:100vw;height:100vh;display:grid;grid-template-columns:1fr;grid-template-rows:1fr 10fr 1fr;grid-template-areas:"a" "b" "c"}.grid-header{grid-area:a}.grid-content{grid-area:b}.grid-footer{grid-area:c;padding:0}.footer-copyright{height:100%;text-align:center}
