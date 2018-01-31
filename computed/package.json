@@ -25,12 +25,12 @@
     "build": "parcel build ./app/index.html --no-cache --out-dir='./dist' --public-url='/'",
     "serve": "serve -CSsp 3000 dist",
     "prebuild": "yarn -i || npm i --no-optional",
-    "preghpages": "npm-run-all preghpages:*",
-    "preghpages:clean": "rimraf -rf ./dist",
-    "preghpages:build": "parcel build ./app/index.html --no-cache --public-url='/knockout-examples/'",
-    "preghpages:fallback": "ncp ./dist/index.html ./dist/404.html",
-    "preghpages:nojekyll": "touch ./dist/.nojekyll",
-    "ghpages": "gh-pages -d ./dist -b gh-pages -m \"Parcel Github Pages $(date +%Y-%m-%d) deployment\""
+    "predeploy": "npm-run-all predeploy:*",
+    "predeploy:clean": "rimraf -rf ./dist",
+    "predeploy:build": "parcel build ./app/index.html --no-cache --public-url='/knockout-examples/'",
+    "predeploy:fallback": "ncp ./dist/index.html ./dist/404.html",
+    "predeploy:nojekyll": "touch ./dist/.nojekyll",
+    "deploy": "gh-pages -d ./dist -b gh-pages -m \"Parcel Github Pages $(date +%Y-%m-%d) deployment\""
   },
   "homepage": "https://daggerok.github.io/knockout-examples",
   "babel": {

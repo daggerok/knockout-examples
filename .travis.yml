@@ -33,7 +33,7 @@ script:
     cd ${root}/${project}
     yarn -i
     yarn build
-    yarn preghpages
+    yarn predeploy
   done
 cache:
   directories:
